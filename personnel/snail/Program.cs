@@ -1,11 +1,89 @@
 ﻿using Exercicesnail;
 using System;
+
+// snail, Course d'escargot
 namespace snail
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            //orientée objet
+
+            List<Snail> snails = new List<Snail>();             // création d'une liste nommée snails, permets d'éviter de répéter le code
+
+            for (int i = 0; i < 10; i++)
+            {
+                snails.Add(new Snail(i));
+            }
+
+            Console.CursorVisible = false;
+
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            while (snails[0].plife > 0)
+            {
+                Console.Clear();
+                foreach (Snail snail in snails)
+                {
+                    Console.SetCursorPosition(snail.x, snail.y);
+                    Console.Write(snail.alive);
+                    snail.moove();
+                }
+                Thread.Sleep(40);
+            }
+
+            foreach (Snail snail in snails)
+            {
+                Console.SetCursorPosition(snail.x, snail.y);
+                Console.Write(snail.dead);
+            }
+
+
+
+
+
+
+            // essaie du snail
+
+            //Snail escargot = new Snail(2);                     //(escargot est une classe), et on va le créer
+            //Snail titi = new Snail();                          // deuxieme escargot
+
+
+            //for (int i = 0; i < 10; i++) 
+            //{ 
+            //    snails.Add(new Snail(i));
+            //}
+
+            //Console.CursorVisible = false;                      // pour pas voir le cursor
+            //while (snails[0].plife > 0)                          // Quand le premier escargot meurt ca s'arrete
+            //{
+            //    Console.Clear();
+            //    foreach (Snail snail in snails) 
+            //    {
+            //        Console.SetCursorPosition(escargot.x, escargot.y);
+            //        Console.Write(snail.alive);                  // affiche l'escargot en vie
+            //        escargot.moove();                                   // augmente la position
+            //    }
+
+
+            //    Thread.Sleep(10);
+            //}
+            // foreach (Snail snail in snails) 
+            //    {
+            //        Console.SetCursorPosition(escargot.x, escargot.y);
+            //        Console.Write(snail.alive);                  // affiche l'escargot en vie
+            //        escargot.moove();                                   // augmente la position
+            //    }
+
+            //Console.SetCursorPosition(escargot.x, escargot.y);
+            //Console.Write(escargot.dead);
+            //Console.SetCursorPosition(titi.x, titi.y);
+            //Console.Write(titi.dead);
+
+            //Console.ReadLine();                                 //attents qu'on appuie sur le clavier
+
+
             //int vie = 50;
             //Console.ForegroundColor = ConsoleColor.Yellow;
             //Console.CursorVisible = false; // pour pas voir le cursor
@@ -28,35 +106,14 @@ namespace snail
             //        Console.SetCursorPosition(i + 1, 15);
             //        Console.Write("_____");
             //    }
+
+
+
+
+
+            // snails.Add(escargot);                              // Ajouter du premier escargot dans la liste
+            // snails.Add(titi);                                   // Ajouter du deuxième escargot dans la liste
             //}
-
-
-            //Resolution du prof orientée objet
-            Snail escargot = new Snail();               //(escargot est une classe), et on va le créer
-            Snail titi = new Snail();                   // deuxieme escargot
-            titi.dead = "*****";
-
-            Console.CursorVisible = false;              // pour pas voir le cursor
-            while (escargot.plife > 0)                  // tant que toto est en vie
-            {
-                Console.Clear();
-                Console.SetCursorPosition(escargot.x, 15);
-                Console.Write(escargot.alive);          // affiche l'escargot en vie
-                Console.SetCursorPosition(titi.x, 10);
-                Console.Write(titi.alive);              // affiche l'escargot en vie
-                escargot.x++;                           // augmente la position
-                titi.moove();                           // utilisation de la méthode pour bouger
-                
-                escargot.plife--;
-                titi.plife++;
-                Thread.Sleep(10);
-            }
-            Console.SetCursorPosition(escargot.x, 15);
-            Console.Write(escargot.dead);
-            Console.SetCursorPosition(titi.x, 10);
-            Console.Write(titi.dead);
-
-            Console.ReadLine();                         //attents qu'on appuie sur le clavier
         }
     }
 }
