@@ -1,0 +1,3 @@
+commence a gauche
+a chaque boucle il faut le deplacer et on enleve un point de vie
+affiche mort à la fin de la boucle
