@@ -1,10 +1,17 @@
-﻿namespace parachute
+﻿using Exerciceparachute;
+
+// avion qui avance et fais tomber des personnes avec des parachutes
+namespace paraClub
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<Parachute> snails = new List<Parachute>();             // Liste
+
+
+
+
         }
     }
 }

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace parachute
+namespace Exerciceparachute
 {
-    internal class Parachute
+    internal class Config
     {
+        public const int SCREEN_HEIGHT = 40;
+        public const int SCREEN_WIDTH = 150;
     }
 }
