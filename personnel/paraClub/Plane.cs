@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Security.Cryptography.X509Certificates;
 
 namespace exerciceParachute
 {
@@ -12,14 +13,13 @@ namespace exerciceParachute
     {
         public int x = 0;                       // position
         public int height;
-        public int y = 5;
+        public int y = 0;
 
         public Plane()
         {
             x = 0;
             height = Config.SCREEN_HEIGHT;
         }
-
 
         private string[] view =
       {
@@ -36,31 +36,26 @@ namespace exerciceParachute
         /// </summary>
         internal void update()
         {
-            x++;
-
+            if (x > Config.SCREEN_WIDTH)
+            {
+                x = 0;
+            }
+            else
+            {
+                x++;
+            }
         }
 
         /// <summary>
-        /// 
+        /// Déplacement de l'avion
         /// </summary>
         internal void draw() // mettre internal pour que le x fonctionne
         {
-            for (int i = 0; i < 150; i++)
+            for (int j = 0; j < view.Length; j++)
             {
-                Console.Clear();
-
-                for (int j = 0; j < view.Length; j++)
-                {
-                    Console.SetCursorPosition(i, j);
-                    Console.Write(view[j]);
-
-                }
-
-                Thread.Sleep(70);
-
-
+                Console.SetCursorPosition(x, j);
+                Console.Write(view[j]);
             }
-            //
         }
     }
 }
