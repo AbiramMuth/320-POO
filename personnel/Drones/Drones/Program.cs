@@ -20,8 +20,19 @@ namespace Drones
             drone.Name = "Joe";
             fleet.Add(drone);
 
+            List<Building> numberBuilding = new List<Building>();
+            for (int i = 0; i < 50; i++)
+            {
+                Building building = new Building();
+                building.X = Helper.alea.Next(3, Config.WIDTH - 10);
+                building.Y = Helper.alea.Next(3, Config.HEIGHT - 10);
+                numberBuilding.Add(building);
+
+            }
+
+
             // Démarrage
-            Application.Run(new AirSpace(fleet));
+            Application.Run(new AirSpace(fleet, numberBuilding));
         }
     }
 }
