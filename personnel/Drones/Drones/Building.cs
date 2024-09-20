@@ -10,20 +10,23 @@ namespace Drones
     {
         private int _x;                                // Position en X depuis la gauche de l'espace aérien
         private int _y;                                 // Position en Y depuis le haut de l'espace aérien
+        public static int nbBuildings = 0;
+
 
         private Pen ColorBuilding = new Pen(new SolidBrush(Color.Gold), 7);        
 
         public int X { get => _x; set => _x = value; }
         public int Y { get => _y; set => _y = value; }
 
-
+        public Building()
+        {
+            nbBuildings++;
+        }
         public void Render(BufferedGraphics drawingSpace) 
         {
             drawingSpace.Graphics.DrawRectangle(ColorBuilding, new Rectangle(X - 4, Y - 2, 20, 20));
-            if ()
-
+            
         }
-
-
     }
 }
+

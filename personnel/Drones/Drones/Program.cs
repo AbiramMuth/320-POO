@@ -13,7 +13,7 @@ namespace Drones
             ApplicationConfiguration.Initialize();
 
             // Création de la flotte de drones
-            List<Drone> fleet= new List<Drone>();
+            List<Drone> fleet = new List<Drone>();
             Drone drone = new Drone();
             drone.X = 100;
             drone.Y = 100;
@@ -21,18 +21,31 @@ namespace Drones
             fleet.Add(drone);
 
             List<Building> numberBuilding = new List<Building>();
-            for (int i = 0; i < 50; i++)
+            List<Factory> nbrFactory = new List<Factory>();
+            List<Store> nbmagasin = new List<Store>();
+            for (int i = 0; i < 5; i++)
             {
                 Building building = new Building();
                 building.X = Helper.alea.Next(3, Config.WIDTH - 10);
                 building.Y = Helper.alea.Next(3, Config.HEIGHT - 10);
                 numberBuilding.Add(building);
 
+                Factory usines = new Factory();
+                usines.X = Helper.alea.Next(3, Config.WIDTH - 10);
+                usines.Y = Helper.alea.Next(3, Config.HEIGHT - 10);
+                nbrFactory.Add(usines);
+
+                Store store = new Store();
+                store.X = Helper.alea.Next(3, Config.WIDTH - 10);
+                store.Y = Helper.alea.Next(3, Config.HEIGHT - 10);
+                nbmagasin.Add(store);
+
+
             }
 
 
             // Démarrage
-            Application.Run(new AirSpace(fleet, numberBuilding));
+            Application.Run(new AirSpace(fleet, numberBuilding, nbrFactory, nbmagasin));
         }
     }
 }
