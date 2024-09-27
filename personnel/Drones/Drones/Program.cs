@@ -14,11 +14,30 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet = new List<Drone>();
-            Drone drone = new Drone();
-            drone.X = 100;
-            drone.Y = 100;
-            drone.Name = "Joe";
-            fleet.Add(drone);
+            for (int i = 0; i < 13; i++)
+            {
+                Drone drone = new Drone();
+                drone.X = Helper.alea.Next(Config.WIDTH);
+                drone.Y = Helper.alea.Next(Config.HEIGHT);
+                drone.Name = "Joe";
+                fleet.Add(drone);
+            }
+
+            // partie vérification des exceptions
+            try
+            {
+                if (fleet.Count <= 10)
+                {
+                    int RES = fleet.Count;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error {e.Message}");
+            }
+
+
+
 
             List<Building> numberBuilding = new List<Building>();
             List<Factory> nbrFactory = new List<Factory>();

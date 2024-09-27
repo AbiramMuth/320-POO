@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Drones
 {
+    // héritages de buiding
     public class Factory : Building
     {
         public static int nbrFactory = 0;
 
-        private Pen ColorUsine = new Pen(new SolidBrush(Color.Red), 99);
+        private Pen ColorUsine = new Pen(new SolidBrush(Color.Red), 10);
 
         public Factory()
         {
@@ -18,7 +19,7 @@ namespace Drones
         }
         public new void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawRectangle(ColorUsine, new Rectangle(X - 4, Y - 2, 30, 30));
+            drawingSpace.Graphics.DrawRectangle(ColorUsine, new Rectangle(X - 4, Y - 2, 10, 10));
             
         }
     }

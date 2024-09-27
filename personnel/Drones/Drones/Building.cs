@@ -24,7 +24,7 @@ namespace Drones
         }
         public void Render(BufferedGraphics drawingSpace) 
         {
-            drawingSpace.Graphics.DrawRectangle(ColorBuilding, new Rectangle(X - 4, Y - 2, 20, 20));
+            drawingSpace.Graphics.DrawRectangle(ColorBuilding, new Rectangle(X - 4, Y - 2, 10, 10));
             
         }
     }

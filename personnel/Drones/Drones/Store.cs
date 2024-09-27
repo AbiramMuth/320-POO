@@ -11,7 +11,7 @@ namespace Drones
         private Pen Colormagasin = new Pen(new SolidBrush(Color.Black), 8);
         public new void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawEllipse(Colormagasin, new Rectangle(X - 4, Y - 2, 20, 20));
+            drawingSpace.Graphics.DrawEllipse(Colormagasin, new Rectangle(X - 4, Y - 2, 10, 10));
           
         }
     }
