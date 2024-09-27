@@ -4,9 +4,24 @@ namespace Drones
 {
     // Cette partie de la classe Drone définit comment on peut voir un drone
 
-    public partial class Drone
+    public partial class Drone : IExpellable
     {
         private Pen droneBrush = new Pen(new SolidBrush(Color.Purple), 3);
+
+        public bool Evacuate(Rectangle zone)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FreeFlight()
+        {
+            throw new NotImplementedException();
+        }
+
+        public EvacuationState GetEvacuationState()
+        {
+            throw new NotImplementedException();
+        }
 
         // De manière graphique
         public void Render(BufferedGraphics drawingSpace)
