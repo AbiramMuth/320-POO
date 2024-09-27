@@ -32,7 +32,7 @@ namespace Drones
             this.nbrStore = nbrStore;
 
             // message erreur s'il y a plus de 10 drones
-            if (fleet.Count > 10)
+            if (fleet.Count > 25)
             {
                 throw new Exception("ERREUR : il y a plus de 10 drones");
             }

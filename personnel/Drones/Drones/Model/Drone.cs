@@ -1,7 +1,7 @@
 ﻿namespace Drones
 {
     // Cette partie de la classe Drone définit ce qu'est un drone par un modèle numérique
-    public partial class Drone
+    public partial class Drone : IExpellable
     {
         
 
@@ -16,7 +16,40 @@
         public string Name { get => _name; set => _name = value; }
         public int X { get => _x; set => _x = value; }
         public int Y { get => _y; set => _y = value; }
+        public EvacuationState etat;
 
+
+        public Drone(int x, int y)
+        { 
+            _x = x;
+            _y = y;
+            etat = EvacuationState.Free;
+        }
+
+        // Implémentation de l'interface
+        public bool Evacuate(Rectangle zone)
+        {
+            if (zone.IntersectsWith(new Rectangle(X - 4, Y - 2, 8, 8)))
+            {
+                etat = EvacuationState.Evacuating;
+                return false;
+            }
+            else
+            {
+                etat = EvacuationState.Evacuated;
+                return true;
+            }
+        }
+
+        public void FreeFlight()
+        {
+            etat = EvacuationState.Free;
+        }
+
+        public EvacuationState GetEvacuationState()
+        {
+            return etat;
+        }
 
         // Cette méthode calcule le nouvel état dans lequel le drone se trouve après
         // que 'interval' millisecondes se sont écoulées

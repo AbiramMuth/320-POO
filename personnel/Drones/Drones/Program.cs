@@ -14,9 +14,9 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet = new List<Drone>();
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 20; i++)
             {
-                Drone drone = new Drone();
+                Drone drone = new Drone(1,2);
                 drone.X = Helper.alea.Next(Config.WIDTH);
                 drone.Y = Helper.alea.Next(Config.HEIGHT);
                 drone.Name = "Joe";
@@ -58,8 +58,6 @@ namespace Drones
                 store.X = Helper.alea.Next(3, Config.WIDTH - 10);
                 store.Y = Helper.alea.Next(3, Config.HEIGHT - 10);
                 nbmagasin.Add(store);
-
-
             }
 
 
