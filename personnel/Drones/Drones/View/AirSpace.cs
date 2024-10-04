@@ -6,7 +6,6 @@ namespace Drones
 
     public partial class AirSpace : Form
     {
-
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Drone> fleet;
         private List<Building> numberBuilding;
@@ -30,7 +29,7 @@ namespace Drones
             this.numberBuilding = numberBuilding;
             this.nbrFactory = nbrFactory;
             this.nbrStore = nbrStore;
-
+            Dispatch dispatch = new Dispatch();
 
             // message erreur s'il y a plus de 10 drones
             if (fleet.Count > 25)

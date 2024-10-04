@@ -33,7 +33,8 @@ namespace Drones
         public void Update(int interval)
         {
             timer += interval;
-            if (timer >= TimeToCreate + Helper.alea.Next(0, 1500))
+            // temps de création entre 5s et 7s
+            if (timer >= TimeToCreate + Helper.alea.Next(0, 2000))
             {
                 Console.WriteLine("boìte créer");
                 createCarton = true;
