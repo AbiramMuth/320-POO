@@ -14,7 +14,7 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet = new List<Drone>();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Drone drone = new Drone(1,2);
                 drone.X = Helper.alea.Next(Config.WIDTH);
@@ -44,25 +44,37 @@ namespace Drones
             List<Store> nbmagasin = new List<Store>();
             for (int i = 0; i < 5; i++)
             {
+                // Building jaune
                 Building building = new Building();
                 building.X = Helper.alea.Next(3, Config.WIDTH - 10);
                 building.Y = Helper.alea.Next(3, Config.HEIGHT - 10);
                 numberBuilding.Add(building);
 
+                // Factory en rouge
                 Factory usines = new Factory();
                 usines.X = Helper.alea.Next(3, Config.WIDTH - 10);
                 usines.Y = Helper.alea.Next(3, Config.HEIGHT - 10);
                 nbrFactory.Add(usines);
 
+                // Store rond
                 Store store = new Store();
                 store.X = Helper.alea.Next(3, Config.WIDTH - 10);
                 store.Y = Helper.alea.Next(3, Config.HEIGHT - 10);
                 nbmagasin.Add(store);
             }
 
+            List<Box> boxx = new List<Box>();
+            for (int i = 0; i < 3; i++)
+            {
+                Box box = new Box();
+                box.X = Helper.alea.Next(Config.WIDTH);
+                box.Y = Helper.alea.Next(Config.HEIGHT);
+                boxx.Add(box);
+             
+            }
 
             // Démarrage
-            Application.Run(new AirSpace(fleet, numberBuilding, nbrFactory, nbmagasin));
+            Application.Run(new AirSpace(fleet, numberBuilding, nbrFactory, nbmagasin, boxx));
         }
     }
 }
