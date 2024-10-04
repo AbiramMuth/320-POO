@@ -11,10 +11,13 @@ namespace Drones
     {
         public static int nbrFactory = 0;
 
-        
+        public int Id { get => _id; set => _id = value; }
+
         //public int Id { get => _id; set => _id = value; }
+        private int _id;
 
         private Pen ColorUsine = new Pen(new SolidBrush(Color.Red), 10);
+        
 
         public Factory()
         {
@@ -25,6 +28,7 @@ namespace Drones
         {
 
         }
+
 
         public new void Render(BufferedGraphics drawingSpace)
         {

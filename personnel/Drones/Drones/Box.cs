@@ -21,10 +21,11 @@ namespace Drones
         {
         }
 
-        public new void Render(BufferedGraphics drawingSpace)
-        {
-            drawingSpace.Graphics.DrawRectangle(ColorUsine, new Rectangle(X - 4, Y - 2, 15, 15));
-        }
+        // forme du carton
+        //public new void Render(BufferedGraphics drawingSpace)
+        //{
+        //    drawingSpace.Graphics.DrawRectangle(ColorUsine, new Rectangle(X - 4, Y - 2, 15, 15));
+        //}
 
     }
 }
