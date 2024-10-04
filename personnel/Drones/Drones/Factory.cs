@@ -18,8 +18,10 @@ namespace Drones
 
         private Pen ColorUsine = new Pen(new SolidBrush(Color.Red), 10);
         
-        bool createCarton = false;
-        int TimingCreate = Helper.alea.Next(5000, 10000);
+        bool createCarton;
+        int TimeToCreate = 5000;
+        float timer = 0;
+        
 
 
         public Factory()
@@ -28,12 +30,14 @@ namespace Drones
         }
 
         // carton créer ou non
-        public void Update()
+        public void Update(int interval)
         {
-            if (createCarton = true) 
+            timer += interval;
+            if (timer >= TimeToCreate + Helper.alea.Next(0, 1500))
             {
-                
-                Console.WriteLine("Le carton est créer");
+                Console.WriteLine("boìte créer");
+                createCarton = true;
+                timer = 0;
             }
         }
 
