@@ -63,18 +63,9 @@ namespace Drones
                 nbmagasin.Add(store);
             }
 
-            List<Box> boxx = new List<Box>();
-            for (int i = 0; i < 3; i++)
-            {
-                Box box = new Box();
-                box.X = Helper.alea.Next(Config.WIDTH);
-                box.Y = Helper.alea.Next(Config.HEIGHT);
-                boxx.Add(box);
-             
-            }
-
+        
             // Démarrage
-            Application.Run(new AirSpace(fleet, numberBuilding, nbrFactory, nbmagasin, boxx));
+            Application.Run(new AirSpace(fleet, numberBuilding, nbrFactory, nbmagasin));
         }
     }
 }

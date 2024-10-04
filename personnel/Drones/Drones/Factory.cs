@@ -11,22 +11,30 @@ namespace Drones
     {
         public static int nbrFactory = 0;
 
-        public int Id { get => _id; set => _id = value; }
+        public int IdFactory { get => _id; set => _id = value; }
 
         //public int Id { get => _id; set => _id = value; }
         private int _id;
 
         private Pen ColorUsine = new Pen(new SolidBrush(Color.Red), 10);
         
+        bool createCarton = false;
+        int TimingCreate = Helper.alea.Next(5000, 10000);
+
 
         public Factory()
         {
             nbrFactory++;
         }
 
+        // carton créer ou non
         public void Update()
         {
-
+            if (createCarton = true) 
+            {
+                
+                Console.WriteLine("Le carton est créer");
+            }
         }
 
 
